@@ -1,6 +1,6 @@
-package Forms.Clientes;
+package Dinamis.Forms.Clientes;
 
-import Classes.insertCadastro;
+import Dinamis.Classes.insertCadastro;
 import javax.swing.JOptionPane;
 
 /**

@@ -1,4 +1,4 @@
-package Classes;
+package Dinamis.Classes;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +7,7 @@ import java.sql.ResultSet;
  *
  * @author Juliano Pimentel
  */
-public class verificarLogin extends Connecting.conectarDB {
+public class verificarLogin extends Dinamis.Connecting.conectarDB {
             
         //Metodo para validar login.
         public boolean validate_login(String username,String password) {

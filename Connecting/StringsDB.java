@@ -1,4 +1,4 @@
-package Connecting;
+package Dinamis.Connecting;
 /**
  *
  * @author Juliano Pimentel
@@ -6,9 +6,7 @@ package Connecting;
 public class StringsDB {
     
         protected String driver = "com.mysql.jdbc.Driver";  
-        protected String urlDB = "jdbc:mysql://localhost:3307/java?";
-        protected String usuarioDB = "root";
-        protected String senhaDB = "senha";
-        public String usuario = "";
-        
+        protected String urlDB = "jdbc:mysql://localhost:3307/escritorio?";
+        protected String usuarioDB = "usuario";
+        protected String senhaDB = "senha";        
     }

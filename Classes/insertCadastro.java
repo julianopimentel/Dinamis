@@ -1,7 +1,6 @@
-package Classes;
+package Dinamis.Classes;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -9,7 +8,7 @@ import javax.swing.JOptionPane;
  *
  * @author Juliano Pimentel
  */
-public class insertCadastro extends Connecting.conectarDB {
+public class insertCadastro extends Dinamis.Connecting.conectarDB {
     
 
 

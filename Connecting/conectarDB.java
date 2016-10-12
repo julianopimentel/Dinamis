@@ -1,4 +1,4 @@
-package Connecting;
+package Dinamis.Connecting;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
