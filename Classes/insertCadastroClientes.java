@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  *
  * @author Juliano Pimentel
  */
-public class insertCadastro extends Dinamis.Connecting.conectarDB {
+public class insertCadastroClientes extends Dinamis.Connecting.conectarDB {
     
 
 

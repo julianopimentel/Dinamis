@@ -39,12 +39,6 @@ public class Inicial extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
@@ -98,34 +92,15 @@ public class Inicial extends javax.swing.JFrame {
 
         jMenuBar1.add(menuCadastro);
 
-        jMenu3.setText("Televendas");
+        jMenu3.setText("Processos");
 
-        jMenuItem8.setText("Vendas");
+        jMenuItem8.setText("Criar");
         jMenu3.add(jMenuItem8);
 
-        jMenuItem9.setText("Orçamentos");
+        jMenuItem9.setText("Consultar");
         jMenu3.add(jMenuItem9);
 
         jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Estoque");
-
-        jMenuItem10.setText("Consulta");
-        jMenu4.add(jMenuItem10);
-
-        jMenuItem11.setText("Cadastro");
-        jMenu4.add(jMenuItem11);
-
-        jMenuItem12.setText("Baixa");
-        jMenu4.add(jMenuItem12);
-
-        jMenuItem13.setText("Transferência");
-        jMenu4.add(jMenuItem13);
-
-        jMenuItem14.setText("Balanço");
-        jMenu4.add(jMenuItem14);
-
-        jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Ajuda");
 
@@ -229,15 +204,9 @@ public class Inicial extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;

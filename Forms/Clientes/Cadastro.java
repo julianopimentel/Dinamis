@@ -1,6 +1,6 @@
 package Dinamis.Forms.Clientes;
 
-import Dinamis.Classes.insertCadastro;
+import Dinamis.Classes.insertCadastroClientes;
 import javax.swing.JOptionPane;
 
 /**
@@ -279,7 +279,7 @@ public class Cadastro extends javax.swing.JFrame {
             String est_civil = boxCivil.getSelectedItem().toString();
             String observacao = campoObs.getText();
 
-            insertCadastro r = new insertCadastro();    //Conectar com o banco.
+            insertCadastroClientes r = new insertCadastroClientes();    //Conectar com o banco.
                     
             if(r.Cadastro(cpf, nome, sobrenome, telefone, email, rua, bairro, numero, estado, dt_nascimento, est_civil, observacao)) {    //Valida o campo digitado com o banco.
                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
