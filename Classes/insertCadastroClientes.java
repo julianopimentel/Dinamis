@@ -9,10 +9,6 @@ import javax.swing.JOptionPane;
  * @author Juliano Pimentel
  */
 public class insertCadastroClientes extends Dinamis.Connecting.conectarDB {
-    
-
-
-        
         //Metodo para validar login.
         public boolean Cadastro (String cpf, String nome, String sobrenome, String telefone, String email, String rua, String bairro, String numero, String estado, String dt_nascimento, String est_civil, String observacao) {
             

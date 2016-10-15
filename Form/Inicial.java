@@ -1,8 +1,11 @@
 package Dinamis.Form;
 
-import Dinamis.Form.Clientes.Cadastro;
+import Dinamis.Form.Advogados.cadastroAdvogados;
+import Dinamis.Form.Clientes.cadastroClientes;
 import Dinamis.Form.Outros.About;
 import Dinamis.Form.Outros.CalculadoraTela;
+import java.awt.Desktop;
+import java.net.URI;
 import javax.swing.JOptionPane;
 
 /**
@@ -48,9 +51,8 @@ public class Inicial extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem15 = new javax.swing.JMenuItem();
-        jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -103,6 +105,11 @@ public class Inicial extends javax.swing.JFrame {
         jMenu2.setText("Advogados");
 
         jMenuItem11.setText("Cadastrar");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem11);
 
         jMenuItem10.setText("Pesquisar");
@@ -131,12 +138,7 @@ public class Inicial extends javax.swing.JFrame {
 
         jMenu5.setText("Ajuda");
 
-        jMenuItem15.setText("Ajuda Online");
-        jMenu5.add(jMenuItem15);
-
-        jMenuItem16.setText("Suporte");
-        jMenu5.add(jMenuItem16);
-
+        jMenuItem17.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem17.setText("Calculadora");
         jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,6 +146,14 @@ public class Inicial extends javax.swing.JFrame {
             }
         });
         jMenu5.add(jMenuItem17);
+
+        jMenuItem16.setText("Suporte");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem16);
 
         menuSobre.setText("Sobre");
         menuSobre.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +198,7 @@ public class Inicial extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         //Cadastro de Clientes.
-        new Cadastro().setVisible(true);
+        new cadastroAdvogados().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -200,6 +210,20 @@ public class Inicial extends javax.swing.JFrame {
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
         new CalculadoraTela().setVisible(true);
     }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+         try {
+                Desktop.getDesktop().browse(new URI("https://github.com/julianopp/Bukkit"));
+                
+        } catch (Exception e) {
+            e.printStackTrace();
+        }          
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        //Cadastro de Advogados.
+        new cadastroAdvogados().setVisible(true);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,7 +273,6 @@ public class Inicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem2;

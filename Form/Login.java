@@ -46,11 +46,6 @@ public class Login extends javax.swing.JFrame {
         setBackground(java.awt.Color.BLACK);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
-        addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                enter(evt);
-            }
-        });
 
         jLabel1.setText("Informe seu usuário e senha para logar.");
 
@@ -177,10 +172,6 @@ public class Login extends javax.swing.JFrame {
              }
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
-
-    private void enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enter
-        // TODO add your handling code here:
-    }//GEN-LAST:event_enter
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

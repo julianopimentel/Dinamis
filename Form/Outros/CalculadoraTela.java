@@ -5,6 +5,8 @@
  */
 package Dinamis.Form.Outros;
 
+import Dinamis.Classes.Calculadora;
+
 /**
  *
  * @author Juliano P
