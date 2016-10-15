@@ -5,6 +5,7 @@
  */
 package Dinamis.Form.Clientes;
 
+import Dinamis.Classes.verificar;
 import Dinamis.Connecting.conectarDB;
 import static java.lang.Math.exp;
 import java.sql.PreparedStatement;
@@ -66,7 +67,7 @@ public class pesquisaClientes extends javax.swing.JFrame {
                 .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,7 +77,7 @@ public class pesquisaClientes extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -84,35 +85,20 @@ public class pesquisaClientes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
                 
-            String cpf = campoCPF.getText();
-                    
-            String sql = "SELECT cpf FROM clientes";   
-            try {  
-                conectarDB r = new conectarDB();
-                 r.conecta();
-
-                PreparedStatement prep = r.Conexao.prepareStatement(sql);  
-                //esse retornaConexao está tratando da conexão com o bd.  
-                ResultSet rs  = prep.executeQuery();                
-                  
-                rs.next();  
-                  
-                String exp = rs.getString("cpf");//se for Varchar ou char usa rs.getString  
-      
-                  
-                if(exp.equals(cpf)){
-                    JOptionPane.showMessageDialog(null, "Já cadastrado! "+ exp +"," + cpf);
+        // Valida se está com os campos vazios.
+        if(campoCPF.getText().length()==0)
+            JOptionPane.showMessageDialog(null, "Preencha o campo do Usuário");
+        else{
+            String cpf = campoCPF.getText();   // Resgata o usuario.
+            verificar r = new verificar();    //Conectar com o banco.
+            
+            if(r.validate_cpf(cpf)) {    //Valida o campo digitado com o banco.
+                    JOptionPane.showMessageDialog(null, "Já cadastrado!");
                 }
                             else{
-                    JOptionPane.showMessageDialog(null, "Sem cadastro!"+ exp +"," + cpf);
-                }
-                  
-                } catch (SQLException e){  
-                    JOptionPane.showMessageDialog(null, "Ops, ocorreu um erro!");  
-                    e.printStackTrace();  
-                } catch (Exception e){  
-                    e.printStackTrace();  
-            }  
+                    JOptionPane.showMessageDialog(null, "Sem cadastro!");
+        }
+    }    
       
     }//GEN-LAST:event_jButton1ActionPerformed
 

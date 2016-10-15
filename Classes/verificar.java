@@ -7,7 +7,7 @@ import java.sql.ResultSet;
  *
  * @author Juliano Pimentel
  */
-public class verificarLogin extends Dinamis.Connecting.conectarDB {
+public class verificar extends Dinamis.Connecting.conectarDB {
             
         //Metodo para validar login.
         public boolean validate_login(String username,String password) {
@@ -28,5 +28,26 @@ public class verificarLogin extends Dinamis.Connecting.conectarDB {
                 e.printStackTrace();desconecta();
                 return false;
                 } 
+        } 
+        
+        //Metodo para validar o cpf.
+        public boolean validate_cpf(String cpf) {
+            try{           
+                conecta();    
+                PreparedStatement pst = Conexao.prepareStatement("Select * from clientes where cpf=?");
+                pst.setString(1, cpf); 
+                ResultSet rs = pst.executeQuery();  
+                
+                if(rs.next())            
+                    return true;   
+                else
+                    return false;          
+                }
+            
+            catch(Exception e){
+                e.printStackTrace();desconecta();
+                return false;
+                } 
         }  
+        
 }
