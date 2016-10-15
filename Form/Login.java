@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dinamis.Forms;
+package Dinamis.Form;
 import Dinamis.Classes.verificarLogin;
 import javafx.scene.paint.Color;
 import javax.swing.JOptionPane;

@@ -1,6 +1,8 @@
-package Dinamis.Forms;
+package Dinamis.Form;
 
-import Dinamis.Forms.Clientes.Cadastro;
+import Dinamis.Form.Clientes.Cadastro;
+import Dinamis.Form.Outros.About;
+import Dinamis.Form.Outros.CalculadoraTela;
 import javax.swing.JOptionPane;
 
 /**
@@ -136,6 +138,11 @@ public class Inicial extends javax.swing.JFrame {
         jMenu5.add(jMenuItem16);
 
         jMenuItem17.setText("Calculadora");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem17);
 
         menuSobre.setText("Sobre");
@@ -166,7 +173,7 @@ public class Inicial extends javax.swing.JFrame {
 
     private void menuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSobreActionPerformed
         // Abrir about.
-        new Inicial().setVisible(true);
+        new About().setVisible(true);
     }//GEN-LAST:event_menuSobreActionPerformed
 
     private void jMenuItem3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem3MouseClicked
@@ -189,6 +196,10 @@ public class Inicial extends javax.swing.JFrame {
         this.dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        new CalculadoraTela().setVisible(true);
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     /**
      * @param args the command line arguments

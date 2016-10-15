@@ -1,4 +1,4 @@
-package Dinamis.Forms.Clientes;
+package Dinamis.Form.Clientes;
 
 import Dinamis.Classes.insertCadastroClientes;
 import javax.swing.JOptionPane;
