@@ -50,4 +50,24 @@ public class verificar extends Dinamis.Connecting.conectarDB {
                 } 
         }  
         
+        //Metodo para validar o cpf.
+        public boolean validate_oab(String oab) {
+            try{           
+                conecta();    
+                PreparedStatement pst = Conexao.prepareStatement("Select * from advogados where oab=?");
+                pst.setString(1, oab); 
+                ResultSet rs = pst.executeQuery();  
+                
+                if(rs.next())            
+                    return true;   
+                else
+                    return false;          
+                }
+            
+            catch(Exception e){
+                e.printStackTrace();desconecta();
+                return false;
+                } 
+        }  
+        
 }

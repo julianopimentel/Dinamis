@@ -34,5 +34,4 @@ public class insertCadastroAdvogados extends Dinamis.Connecting.conectarDB  {
             } return true; 
            
         }
-    
 }

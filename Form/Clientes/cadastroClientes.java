@@ -1,6 +1,7 @@
 package Dinamis.Form.Clientes;
 
 import Dinamis.Classes.insertCadastroClientes;
+import Dinamis.Classes.verificar;
 import javax.swing.JOptionPane;
 
 /**
@@ -55,6 +56,7 @@ public class cadastroClientes extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         campoCPF = new javax.swing.JFormattedTextField();
         btnLimpar = new javax.swing.JButton();
+        btnVerificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("JP - Cadastro de Clientes");
@@ -226,6 +228,13 @@ public class cadastroClientes extends javax.swing.JFrame {
             }
         });
 
+        btnVerificar.setText("Verificar");
+        btnVerificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerificarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -250,6 +259,8 @@ public class cadastroClientes extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnVerificar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -258,11 +269,12 @@ public class cadastroClientes extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVerificar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
@@ -319,6 +331,23 @@ public class cadastroClientes extends javax.swing.JFrame {
            campoObs.getText();
     }//GEN-LAST:event_btnLimparActionPerformed
 
+    private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
+                // Valida se está com os campos vazios.
+        if(campoCPF.getText().length()==0)
+            JOptionPane.showMessageDialog(null, "Preencha o campo do CPF!");
+        else{
+            String cpf = campoCPF.getText();   // Resgata o usuario.
+            verificar r = new verificar();    //Conectar com o banco.
+            
+            if(r.validate_cpf(cpf)) {    //Valida o campo digitado com o banco.
+                    JOptionPane.showMessageDialog(null, "Já cadastrado!");
+                }
+                            else{
+                    JOptionPane.showMessageDialog(null, "Sem cadastro!");
+        }
+    }  
+    }//GEN-LAST:event_btnVerificarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -361,6 +390,7 @@ public class cadastroClientes extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastro;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnVerificar;
     private javax.swing.JTextField campoBairro;
     public javax.swing.JFormattedTextField campoCPF;
     private javax.swing.JTextField campoEmail;

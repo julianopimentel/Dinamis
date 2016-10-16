@@ -6,11 +6,6 @@
 package Dinamis.Form.Clientes;
 
 import Dinamis.Classes.verificar;
-import Dinamis.Connecting.conectarDB;
-import static java.lang.Math.exp;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -77,7 +72,7 @@ public class pesquisaClientes extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
 
         pack();
@@ -94,6 +89,7 @@ public class pesquisaClientes extends javax.swing.JFrame {
             
             if(r.validate_cpf(cpf)) {    //Valida o campo digitado com o banco.
                     JOptionPane.showMessageDialog(null, "Já cadastrado!");
+                    System.out.println("CPF" + cpf);
                 }
                             else{
                     JOptionPane.showMessageDialog(null, "Sem cadastro!");
