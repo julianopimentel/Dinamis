@@ -22,7 +22,8 @@ public class conectarDB extends StringsDB {
             try   
             {  
                 Class.forName(driver);  
-                Conexao = DriverManager.getConnection(urlDB, usuarioDB, senhaDB);  
+                Conexao = DriverManager.getConnection(urlDB, usuarioDB, senhaDB); 
+                //showmessage(Exception,boolean,0,1);/
             }  
             catch(ClassNotFoundException Driver)   
             {  

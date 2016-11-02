@@ -18,16 +18,17 @@ public class verificar extends Dinamis.Connecting.conectarDB {
                 pst.setString(2, password);
                 ResultSet rs = pst.executeQuery();  
                 
-                if(rs.next())            
-                    return true;   
+                if(rs.next())
+                    return true;                 
                 else
                     return false;          
-                }
+                }           
             
             catch(Exception e){
                 e.printStackTrace();desconecta();
                 return false;
                 } 
+            
         } 
         
         //Metodo para validar o cpf.

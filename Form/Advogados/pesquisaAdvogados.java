@@ -3,21 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dinamis.Form.Clientes;
+package Dinamis.Form.Advogados;
 
 import Dinamis.Classes.verificar;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Juliano P
+ * @author Juliano Pimentel
  */
-public class pesquisaClientes extends javax.swing.JFrame {
+public class pesquisaAdvogados extends javax.swing.JFrame {
 
     /**
-     * Creates new form pesquisaClientes
+     * Creates new form pesquisaAdvogados
      */
-    public pesquisaClientes() {
+    public pesquisaAdvogados() {
         initComponents();
     }
 
@@ -30,74 +30,65 @@ public class pesquisaClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        campoCPF = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
+        btnVerificar = new javax.swing.JButton();
+        campoOAB = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jButton1.setText("Pesquisar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("Nº OAB:");
+
+        btnVerificar.setText("Pesquisar");
+        btnVerificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnVerificarActionPerformed(evt);
             }
         });
-
-        try {
-            campoCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
-        jLabel1.setText("CPF:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addComponent(campoOAB, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnVerificar)
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(208, Short.MAX_VALUE))
+                    .addComponent(campoOAB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVerificar))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                
-        // Valida se está com os campos vazios.
-        if(campoCPF.getText().length()==0)
-            JOptionPane.showMessageDialog(null, "Preencha o campo do Usuário");
+    private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
+              // Valida se está com os campos vazios.
+        if(campoOAB.getText().length()==0)
+            JOptionPane.showMessageDialog(null, "Preencha o número OAB!");
         else{
-            String cpf = campoCPF.getText();   // Resgata o usuario.
+            String oab = campoOAB.getText();   // Resgata o usuario.
             verificar r = new verificar();    //Conectar com o banco.
             
-            if(r.validate_cpf(cpf)) {    //Valida o campo digitado com o banco.
+            if(r.validate_oab(oab)) {    //Valida o campo digitado com o banco.
                     JOptionPane.showMessageDialog(null, "Já cadastrado!");
-                    System.out.println("CPF" + cpf);
                 }
                             else{
                     JOptionPane.showMessageDialog(null, "Sem cadastro!");
         }
-    }    
-      
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }  
+    }//GEN-LAST:event_btnVerificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,27 +107,27 @@ public class pesquisaClientes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(pesquisaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pesquisaAdvogados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(pesquisaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pesquisaAdvogados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(pesquisaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pesquisaAdvogados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(pesquisaClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pesquisaAdvogados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pesquisaClientes().setVisible(true);
+                new pesquisaAdvogados().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField campoCPF;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnVerificar;
+    private javax.swing.JTextField campoOAB;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
