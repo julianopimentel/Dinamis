@@ -8,6 +8,16 @@ import java.sql.ResultSet;
  * @author Juliano Pimentel
  */
 public class verificar extends Dinamis.Connecting.conectarDB {
+    
+        public String usuario;
+        
+        public void setUsuario(String usuario){
+            this.usuario=usuario;
+        }
+        
+        public String getUsuario(){
+            return usuario;
+        }
             
         //Metodo para validar login.
         public boolean validate_login(String username,String password) {

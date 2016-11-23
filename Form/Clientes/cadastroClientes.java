@@ -1,6 +1,6 @@
 package Dinamis.Form.Clientes;
 
-import Dinamis.Classes.insertCadastroClientes;
+import Dinamis.Classes.controleClientes;
 import Dinamis.Classes.verificar;
 import javax.swing.JOptionPane;
 
@@ -302,7 +302,7 @@ public class cadastroClientes extends javax.swing.JFrame {
             String est_civil = boxCivil.getSelectedItem().toString();
             String observacao = campoObs.getText();
 
-            insertCadastroClientes r = new insertCadastroClientes();    //Conectar com o banco.
+            controleClientes r = new controleClientes();    //Conectar com o banco.
                     
             if(r.Cadastro(cpf, nome, sobrenome, telefone, email, rua, bairro, numero, estado, dt_nascimento, est_civil, observacao)) {    //Valida o campo digitado com o banco.
                       this.dispose();
@@ -334,7 +334,7 @@ public class cadastroClientes extends javax.swing.JFrame {
 
     private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
                 // Valida se está com os campos vazios.
-        if(campoCPF.getText().length()==0)
+        if(campoCPF.getText().length()>=4)
             JOptionPane.showMessageDialog(null, "Preencha o campo do CPF!");
         else{
             String cpf = campoCPF.getText();   // Resgata o usuario.

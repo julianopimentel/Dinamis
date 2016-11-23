@@ -164,7 +164,9 @@ public class Login extends javax.swing.JFrame {
             
             if(r.validate_login(user, pwd)) {    //Valida o campo digitado com o banco.
                 this.dispose();
+                r.setUsuario(user);
                 new Inicial().setVisible(true);
+                
             }
             else{
                 JOptionPane.showMessageDialog(null, "Incorrect Login Credentials");

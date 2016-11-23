@@ -1,6 +1,7 @@
 package Dinamis.Classes;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -8,8 +9,9 @@ import javax.swing.JOptionPane;
  *
  * @author Juliano Pimentel
  */
-public class insertCadastroClientes extends Dinamis.Connecting.conectarDB {
-        //Metodo para validar login.
+public class controleClientes extends Dinamis.Connecting.conectarDB {
+       
+        //Metodo para inserir o cadastro.
         public boolean Cadastro (String cpf, String nome, String sobrenome, String telefone, String email, String rua, String bairro, String numero, String estado, String dt_nascimento, String est_civil, String observacao) {
             
             
@@ -42,4 +44,24 @@ public class insertCadastroClientes extends Dinamis.Connecting.conectarDB {
             } return true; 
            
         }
+        
+        //Metodo para excluir Cliente.
+        public boolean excluirCliente(String cpf) {
+                
+            String sql = "DELETE from clientes WHERE cpf=?"; 
+            try{  
+                conecta();
+                PreparedStatement pst = Conexao.prepareStatement(sql);
+                pst.setString(1, cpf);
+                pst.execute();  
+                pst.close();
+
+                } 
+            catch (SQLException u) 
+            {                  
+                
+                JOptionPane.showMessageDialog(null, u);
+                return false;
+            } return true; 
+         }
 }

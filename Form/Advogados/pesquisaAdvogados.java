@@ -55,8 +55,8 @@ public class pesquisaAdvogados extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campoOAB, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnVerificar)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addComponent(btnVerificar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,7 +66,7 @@ public class pesquisaAdvogados extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(campoOAB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnVerificar))
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,13 +78,15 @@ public class pesquisaAdvogados extends javax.swing.JFrame {
         if(campoOAB.getText().length()==0)
             JOptionPane.showMessageDialog(null, "Preencha o número OAB!");
         else{
-            String oab = campoOAB.getText();   // Resgata o usuario.
+            String oab = campoOAB.getText();   // Resgata o n oab.
             verificar r = new verificar();    //Conectar com o banco.
             
             if(r.validate_oab(oab)) {    //Valida o campo digitado com o banco.
+                this.dispose();
                     JOptionPane.showMessageDialog(null, "Já cadastrado!");
                 }
-                            else{
+                 else{
+                    this.dispose();
                     JOptionPane.showMessageDialog(null, "Sem cadastro!");
         }
     }  

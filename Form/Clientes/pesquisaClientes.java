@@ -61,8 +61,8 @@ public class pesquisaClientes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,7 +72,7 @@ public class pesquisaClientes extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(campoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -82,17 +82,18 @@ public class pesquisaClientes extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
                 
         // Valida se está com os campos vazios.
-        if(campoCPF.getText().length()==0)
-            JOptionPane.showMessageDialog(null, "Preencha o campo do Usuário");
+        if(campoCPF.getText().length()>=4)
+            JOptionPane.showMessageDialog(null, "Preencha o campo do CPF!");
         else{
-            String cpf = campoCPF.getText();   // Resgata o usuario.
+            String cpf = campoCPF.getText();   // Resgata o cpf.
             verificar r = new verificar();    //Conectar com o banco.
             
             if(r.validate_cpf(cpf)) {    //Valida o campo digitado com o banco.
+                  this.dispose();
                     JOptionPane.showMessageDialog(null, "Já cadastrado!");
-                    System.out.println("CPF" + cpf);
                 }
                             else{
+                this.dispose();
                     JOptionPane.showMessageDialog(null, "Sem cadastro!");
         }
     }    

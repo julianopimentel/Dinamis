@@ -29,8 +29,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="campoOAB" min="-2" pref="97" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnVerificar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="131" max="32767" attributes="0"/>
+              <Component id="btnVerificar" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace pref="83" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -43,7 +43,7 @@
                   <Component id="campoOAB" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnVerificar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="255" max="32767" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

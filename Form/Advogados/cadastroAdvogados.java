@@ -1,6 +1,6 @@
 package Dinamis.Form.Advogados;
 
-import Dinamis.Classes.insertCadastroAdvogados;
+import Dinamis.Classes.controleAdvogados;
 import Dinamis.Classes.verificar;
 import javax.swing.JOptionPane;
 
@@ -163,7 +163,7 @@ public class cadastroAdvogados extends javax.swing.JFrame {
         String sobrenome = campoSobrenome.getText();
         String telefone = campoTelefone.getText();
 
-        insertCadastroAdvogados r = new insertCadastroAdvogados();    //Conectar com o banco.
+        controleAdvogados r = new controleAdvogados();    //Conectar com o banco.
 
         if(r.Cadastro(oab, nome, sobrenome, telefone)) {    //Valida o campo digitado com o banco.
             this.dispose();
